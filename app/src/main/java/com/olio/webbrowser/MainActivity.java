@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         web.loadUrl(urlString);
         addressBar.setText(urlString);
         if (newinput){
-            if(cache.size() == 10){
+            if(cache.size() == 11){
                 cache.remove(0);
             }
             cache.add(urlString);
