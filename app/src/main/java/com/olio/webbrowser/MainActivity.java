@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         web = (WebView) findViewById(R.id.webView);
         web.setWebViewClient(new WebViewClient());
         web.getSettings().setJavaScriptEnabled(true);
+        web.loadUrl("file:///android_asset/index.html");
         addressBar = (EditText) findViewById(R.id.addressBar);
         addressBar.setMaxLines(1);
         addressBar.setOnKeyListener(new View.OnKeyListener() {
@@ -46,5 +47,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void refreshPage(View v){
         web.reload();
+    }
+
+    public void shoutOut(View v){
+        web.evaluateJavascript("javascript: shoutOut()", null);
     }
 }
